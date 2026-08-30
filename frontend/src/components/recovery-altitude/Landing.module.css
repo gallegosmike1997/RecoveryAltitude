@@ -1,0 +1,452 @@
+.page {
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--ra-ivory);
+  color: var(--ra-navy);
+}
+
+.skipLink {
+  position: fixed;
+  z-index: 20;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  color: var(--ra-navy);
+  background: var(--ra-gold);
+  font-family: var(--ra-font-display);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-140%);
+  transition: transform 160ms ease;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.intro {
+  display: grid;
+  width: min(100% - 48px, 1180px);
+  min-height: 360px;
+  margin: 0 auto;
+  padding: 96px 0 82px;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(44px, 10vw, 160px);
+  align-items: end;
+}
+
+.introCopy {
+  max-width: 760px;
+  animation: rise-in 520ms ease both;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--ra-teal);
+  font-family: var(--ra-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  max-width: 750px;
+  margin: 0;
+  color: var(--ra-navy);
+  font-family: var(--ra-font-display);
+  font-size: clamp(48px, 7vw, 92px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.88;
+}
+
+.introDescription {
+  max-width: 500px;
+  margin: 32px 0 0;
+  color: var(--ra-ink-muted);
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.introActions {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.textAction {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 10px;
+  color: var(--ra-navy);
+  font-family: var(--ra-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.textAction span {
+  color: var(--ra-alpine);
+  font-size: 20px;
+  transition: transform 160ms ease;
+}
+
+.textAction:hover span {
+  transform: translate(2px, 2px);
+}
+
+.actionDivider {
+  width: 1px;
+  height: 24px;
+  background: var(--ra-line);
+}
+
+.routeMarker {
+  display: grid;
+  align-self: end;
+  gap: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--ra-gold);
+  animation: rise-in 520ms 90ms ease both;
+}
+
+.routeMarkerLine {
+  width: 54px;
+  height: 2px;
+  background: var(--ra-alpine);
+}
+
+.routeMarker p {
+  margin: 0;
+  color: var(--ra-navy);
+  font-family: var(--ra-font-display);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.routeMarkerCode {
+  color: var(--ra-teal);
+  font-family: var(--ra-font-mono);
+  font-size: 11px;
+}
+
+.routeSection {
+  width: min(100% - 48px, 1180px);
+  margin: 0 auto;
+  padding: 54px 0 86px;
+  border-top: 1px solid var(--ra-line);
+}
+
+.routeSectionHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-bottom: 22px;
+}
+
+.routeSectionHeader h2,
+.consultationBand h2,
+.variantRail h2 {
+  max-width: 540px;
+  margin: 0;
+  color: var(--ra-navy);
+  font-family: var(--ra-font-display);
+  font-size: clamp(34px, 4.2vw, 58px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+}
+
+.routeRows {
+  border-top: 2px solid var(--ra-navy);
+}
+
+.routeRow {
+  display: grid;
+  min-height: 94px;
+  align-items: center;
+  padding: 18px 0;
+  grid-template-columns: 58px minmax(190px, 0.8fr) minmax(240px, 1.4fr) 44px;
+  gap: 24px;
+  border-bottom: 1px solid var(--ra-line);
+}
+
+.routeNumber {
+  color: var(--ra-teal);
+  font-family: var(--ra-font-mono);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+}
+
+.routeRow h3 {
+  margin: 0;
+  color: var(--ra-navy);
+  font-family: var(--ra-font-display);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.routeRow p {
+  max-width: 380px;
+  margin: 0;
+  color: var(--ra-ink-muted);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.routeRow > a {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: var(--ra-navy);
+  border: 1px solid var(--ra-navy);
+  font-size: 19px;
+  text-decoration: none;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.routeRow > a:hover {
+  color: var(--ra-navy);
+  background: var(--ra-gold);
+}
+
+.consultationBand {
+  display: flex;
+  min-height: 300px;
+  align-items: end;
+  justify-content: space-between;
+  gap: 44px;
+  padding: 64px max(24px, calc((100vw - 1180px) / 2));
+  background: var(--ra-navy);
+  color: var(--ra-ivory);
+}
+
+.consultationBand .eyebrow,
+.consultationBand h2 {
+  color: var(--ra-ivory);
+}
+
+.consultationLink {
+  display: inline-flex;
+  min-height: 54px;
+  align-items: center;
+  gap: 26px;
+  flex: none;
+  padding: 0 18px 0 24px;
+  color: var(--ra-navy);
+  background: var(--ra-gold);
+  clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  font-family: var(--ra-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.consultationLink:hover {
+  background: var(--ra-gold-dark);
+}
+
+.consultationLink span {
+  font-size: 20px;
+}
+
+.variantRail {
+  display: grid;
+  width: min(100% - 48px, 1180px);
+  padding: 88px 0 100px;
+  margin: 0 auto;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 80px;
+}
+
+.variantList {
+  border-top: 2px solid var(--ra-navy);
+}
+
+.variantLink {
+  display: grid;
+  min-height: 88px;
+  align-items: center;
+  padding: 16px 0;
+  grid-template-columns: 44px minmax(0, 1fr) 20px;
+  gap: 16px;
+  border-bottom: 1px solid var(--ra-line);
+  color: var(--ra-navy);
+  text-decoration: none;
+  transition: padding 160ms ease, background-color 160ms ease;
+}
+
+.variantLink:hover {
+  padding-right: 8px;
+  padding-left: 8px;
+  background: rgba(241, 179, 76, 0.18);
+}
+
+.variantLink strong,
+.variantLink small {
+  display: block;
+}
+
+.variantLink strong {
+  font-family: var(--ra-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.variantLink small {
+  margin-top: 7px;
+  color: var(--ra-ink-muted);
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.archiveNote {
+  max-width: 380px;
+  margin: 22px 0 0;
+  color: var(--ra-ink-muted);
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.footer {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 max(24px, calc((100vw - 1180px) / 2));
+  color: var(--ra-ivory);
+  background: var(--ra-alpine);
+  font-family: var(--ra-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 780px) {
+  .intro {
+    width: min(100% - 40px, 640px);
+    min-height: unset;
+    padding: 76px 0 66px;
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .intro h1 {
+    max-width: 540px;
+    font-size: clamp(52px, 15vw, 84px);
+  }
+
+  .introDescription {
+    font-size: 18px;
+  }
+
+  .routeMarker {
+    max-width: 230px;
+  }
+
+  .routeSection,
+  .variantRail {
+    width: min(100% - 40px, 640px);
+  }
+
+  .routeSectionHeader,
+  .consultationBand,
+  .variantRail {
+    display: block;
+  }
+
+  .routeSectionHeader h2 {
+    margin-bottom: 36px;
+  }
+
+  .routeRow {
+    min-height: 0;
+    padding: 20px 0;
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    gap: 12px;
+  }
+
+  .routeRow h3 {
+    font-size: 24px;
+  }
+
+  .routeRow p {
+    grid-column: 2 / 3;
+    margin-top: -4px;
+  }
+
+  .routeRow > a {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+
+  .consultationBand {
+    padding: 56px 20px 60px;
+  }
+
+  .consultationBand h2 {
+    max-width: 520px;
+    margin-bottom: 38px;
+  }
+
+  .consultationLink {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .variantRail {
+    padding: 66px 0 76px;
+  }
+
+  .variantRail h2 {
+    margin-bottom: 36px;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .introActions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .actionDivider {
+    display: none;
+  }
+
+  .routeRow p {
+    font-size: 14px;
+  }
+}

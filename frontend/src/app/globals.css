@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+:root {
+  --ra-ivory: #fbfaf2;
+  --ra-navy: #10232e;
+  --ra-alpine: #205f67;
+  --ra-teal: #4b817e;
+  --ra-gold: #f1b34c;
+  --ra-gold-dark: #d99a32;
+  --ra-snow: #ffffff;
+  --ra-ink-muted: #56706d;
+  --ra-line: rgba(16, 35, 46, 0.2);
+  --ra-line-light: rgba(251, 250, 242, 0.28);
+  --ra-font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --ra-font-body: "Atkinson Hyperlegible", Arial, sans-serif;
+  --ra-font-mono: "IBM Plex Mono", "Courier New", monospace;
+  --ra-header-trailhead: 96px;
+  --ra-header-summit: 126px;
+  --ra-header-register: 118px;
+  --ra-touch-min: 44px;
+  --ra-radius-sharp: 0px;
+  --ra-rule-thin: 1px;
+  --ra-rule-strong: 2px;
+}
+
+@theme inline {
+  --color-background: var(--ra-ivory);
+  --color-foreground: var(--ra-navy);
+  --font-sans: var(--ra-font-body);
+  --font-mono: var(--ra-font-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--ra-ivory);
+  color: var(--ra-navy);
+  font-family: var(--ra-font-body);
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--ra-gold);
+  color: var(--ra-navy);
+}
