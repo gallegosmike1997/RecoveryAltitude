@@ -538,25 +538,6 @@
   margin-right: 8px;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .fieldRouteBand .navGap {
-    display: none;
-  }
-
-  .primaryNav--field-register .navList {
-    gap: 14px;
-  }
-
-  .primaryNav--field-register .navLink {
-    font-size: 14px;
-  }
-
-  .primaryNav--field-register .navNumber {
-    min-width: 24px;
-    margin-right: 6px;
-  }
-}
-
 /* Mobile */
 /*
  * The full navigation no longer has enough room once the masthead and action
@@ -604,6 +585,10 @@
   .mobilePanel .navList {
     display: flex;
     flex-direction: column;
+    /* Variant navList gap rules (trailhead/summit/field-register) are tuned
+       for horizontal desktop rows and must not leak into this stacked list;
+       rows separate via their own border-top instead. */
+    gap: 0;
   }
 
   .mobilePanel .navItem {

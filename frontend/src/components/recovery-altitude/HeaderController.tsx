@@ -35,7 +35,9 @@ export function useHeaderController(variant: HeaderVariant): MenuController {
     }
 
     function handleResize() {
-      if (window.innerWidth >= 768) {
+      // The mobile panel is the navigation surface below 1200px (matching the
+      // CSS breakpoint), so only auto-close once the desktop nav takes over.
+      if (window.innerWidth >= 1200) {
         setIsOpen(false);
       }
     }
