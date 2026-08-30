@@ -10,7 +10,6 @@
     "qa:browser": "node scripts/qa-browser.mjs"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^16.3.3",
     "@nextui-org/react": "^2.6.11",
     "@svgr/webpack": "^8.1.0",
     "@vercel/analytics": "^2.0.1",
@@ -35,5 +34,9 @@
   },
   "overrides": {
     "string.prototype.trim": "1.2.10"
+  },
+  "optionalDependencies": {
+    "@next/swc-linux-x64-gnu": "^16.3.3",
+    "@next/swc-win32-x64-msvc": "^16.3.3"
   }
 }
