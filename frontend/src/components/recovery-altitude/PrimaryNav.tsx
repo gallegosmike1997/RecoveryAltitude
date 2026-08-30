@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Link from "next/link";
 
 import { formatRouteNumber, getNavItems } from "./data";
 import styles from "./Header.module.css";
@@ -34,11 +35,12 @@ export function PrimaryNav({
           return (
             <Fragment key={item.key}>
               <li className={styles.navItem}>
-                <a
+                <Link
                   aria-current={isActive ? "page" : undefined}
                   className={`${styles.navLink} ${isActive ? styles["navLink--active"] : ""}`}
                   href={item.href}
                   onClick={onNavigate}
+                  prefetch={true}
                 >
                   {variant === "field-register" || mobile ? (
                     <span aria-hidden="true" className={styles.navNumber}>
@@ -52,7 +54,7 @@ export function PrimaryNav({
                       <i />
                     </span>
                   ) : null}
-                </a>
+                </Link>
               </li>
               {!mobile && splitIndex === index + 1 ? (
                 <li aria-hidden="true" className={styles.navGap} />

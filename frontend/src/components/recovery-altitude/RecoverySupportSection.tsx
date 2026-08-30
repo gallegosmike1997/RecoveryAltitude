@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
+import { FadeInSection } from "./FadeInSection";
 import styles from "./RecoverySupport.module.css";
 
 const supportSteps = [
@@ -64,14 +65,16 @@ export function RecoverySupportSection() {
       </div>
 
       <ol className={styles.steps}>
-        {supportSteps.map((step) => (
-          <li key={step.number}>
-            <span>{step.number}</span>
-            <div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </div>
-          </li>
+        {supportSteps.map((step, index) => (
+          <FadeInSection key={step.number} delay={index * 0.1}>
+            <li>
+              <span>{step.number}</span>
+              <div>
+                <h3>{step.title}</h3>
+                <p>{step.description}</p>
+              </div>
+            </li>
+          </FadeInSection>
         ))}
       </ol>
 

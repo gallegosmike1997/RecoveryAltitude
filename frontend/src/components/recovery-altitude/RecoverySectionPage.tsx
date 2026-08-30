@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+import { ConsultationForm } from "./ConsultationForm";
+import { FadeInSection } from "./FadeInSection";
 import { RecoveryHeader } from "./RecoveryHeader";
 import styles from "./Landing.module.css";
 import type { NavKey } from "./types";
@@ -40,15 +42,15 @@ export function RecoverySectionPage({
           </div>
         </section>
         {children}
-        <section className={styles.consultationBand} id="consultation">
-          <div>
-            <p className={styles.eyebrow}>A conversation is a good place to start.</p>
-            <h2>Make the next return more considered.</h2>
-          </div>
-          <a className={styles.consultationLink} href="mailto:hello@recoveryaltitude.example">
-            Book a consultation <span aria-hidden="true">↗</span>
-          </a>
-        </section>
+        <FadeInSection>
+          <section className={styles.consultationBand} id="consultation">
+            <div>
+              <p className={styles.eyebrow}>A conversation is a good place to start.</p>
+              <h2>Make the next return more considered.</h2>
+            </div>
+            <ConsultationForm />
+          </section>
+        </FadeInSection>
       </main>
       <footer className={styles.footer}>
         <span>Recovery Altitude</span>

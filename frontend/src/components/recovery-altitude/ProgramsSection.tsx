@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { FadeInSection } from "./FadeInSection";
 import { programs } from "./programs";
 import styles from "./Programs.module.css";
 
@@ -78,12 +79,12 @@ export function ProgramsSection() {
 
       <div className={styles.programList}>
         {programs.map((program, index) => (
-          <details
-            className={`${styles.program} ${recommendedId === program.id ? styles.programRecommended : ""}`}
-            id={program.id}
-            key={program.id}
-            name="program"
-          >
+          <FadeInSection key={program.id} delay={index * 0.06}>
+            <details
+              className={`${styles.program} ${recommendedId === program.id ? styles.programRecommended : ""}`}
+              id={program.id}
+              name="program"
+            >
             <summary className={styles.programSummary}>
               <span aria-hidden="true" className={styles.programNumber}>
                 {String(index + 1).padStart(2, "0")}
@@ -121,7 +122,8 @@ export function ProgramsSection() {
                 </p>
               </div>
             </div>
-          </details>
+            </details>
+          </FadeInSection>
         ))}
       </div>
 

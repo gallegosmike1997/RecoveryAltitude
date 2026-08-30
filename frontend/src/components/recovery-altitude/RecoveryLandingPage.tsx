@@ -1,7 +1,9 @@
 import Link from "next/link";
 
+import { ConsultationForm } from "./ConsultationForm";
 import { RecoveryHeader } from "./RecoveryHeader";
 import { AltitudeWellnessSection } from "./AltitudeWellnessSection";
+import { FadeInSection } from "./FadeInSection";
 import { ProgramsSection } from "./ProgramsSection";
 import { descriptor } from "./data";
 import styles from "./Landing.module.css";
@@ -88,57 +90,65 @@ export function RecoveryLandingPage({ variant, title, description }: RecoveryLan
 
         <AltitudeWellnessSection />
 
-        <section className={styles.routeSection} aria-labelledby="routes-title">
-          <div className={styles.routeSectionHeader}>
-            <p className={styles.eyebrow}>Beyond the programs</p>
-            <h2 id="routes-title">Useful next steps, without the noise.</h2>
-          </div>
-          <div className={styles.routeRows}>
-            {routeSections.map((section, index) => (
-              <article className={styles.routeRow} id={section.id} key={section.id}>
-                <span className={styles.routeNumber}>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{section.label}</h3>
-                <p>{section.summary}</p>
-                <Link aria-label={`Read more about ${section.label}`} href={`/${section.id}`}>
-                  <span aria-hidden="true">↗</span>
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
+        <FadeInSection>
+          <section className={styles.routeSection} aria-labelledby="routes-title">
+            <div className={styles.routeSectionHeader}>
+              <p className={styles.eyebrow}>Beyond the programs</p>
+              <h2 id="routes-title">Useful next steps, without the noise.</h2>
+            </div>
+            <div className={styles.routeRows}>
+              {routeSections.map((section, index) => (
+                <FadeInSection key={section.id} delay={index * 0.08}>
+                  <article className={styles.routeRow} id={section.id}>
+                    <span className={styles.routeNumber}>{String(index + 1).padStart(2, "0")}</span>
+                    <h3>{section.label}</h3>
+                    <p>{section.summary}</p>
+                    <Link aria-label={`Read more about ${section.label}`} href={`/${section.id}`}>
+                      <span aria-hidden="true">↗</span>
+                    </Link>
+                  </article>
+                </FadeInSection>
+              ))}
+            </div>
+          </section>
+        </FadeInSection>
 
-        <section className={styles.consultationBand} id="consultation">
-          <div>
-            <p className={styles.eyebrow}>A conversation is a good place to start.</p>
-            <h2>Make the next return more considered.</h2>
-          </div>
-          <a className={styles.consultationLink} href="mailto:hello@recoveryaltitude.example">
-            Book a consultation <span aria-hidden="true">↗</span>
-          </a>
-        </section>
+        <FadeInSection>
+          <section className={styles.consultationBand} id="consultation">
+            <div>
+              <p className={styles.eyebrow}>A conversation is a good place to start.</p>
+              <h2>Make the next return more considered.</h2>
+            </div>
+            <ConsultationForm />
+          </section>
+        </FadeInSection>
 
-        <section className={styles.variantRail} aria-labelledby="variant-title">
-          <div>
-            <p className={styles.eyebrow}>Design archive</p>
-            <h2 id="variant-title">Header studies, kept for reference.</h2>
-            <p className={styles.archiveNote}>
-              The production header is the two-rail trailhead. The other two
-              directions remain viewable as design studies.
-            </p>
-          </div>
-          <div className={styles.variantList}>
-            {variantLinks.map((link, index) => (
-              <Link className={styles.variantLink} href={link.href} key={link.href}>
-                <span className={styles.routeNumber}>{String(index + 1).padStart(2, "0")}</span>
-                <span>
-                  <strong>{link.label}</strong>
-                  <small>{link.note}</small>
-                </span>
-                <span aria-hidden="true">↗</span>
-              </Link>
-            ))}
-          </div>
-        </section>
+        <FadeInSection>
+          <section className={styles.variantRail} aria-labelledby="variant-title">
+            <div>
+              <p className={styles.eyebrow}>Design archive</p>
+              <h2 id="variant-title">Header studies, kept for reference.</h2>
+              <p className={styles.archiveNote}>
+                The production header is the two-rail trailhead. The other two
+                directions remain viewable as design studies.
+              </p>
+            </div>
+            <div className={styles.variantList}>
+              {variantLinks.map((link, index) => (
+                <FadeInSection key={link.href} delay={index * 0.06}>
+                  <Link className={styles.variantLink} href={link.href}>
+                    <span className={styles.routeNumber}>{String(index + 1).padStart(2, "0")}</span>
+                    <span>
+                      <strong>{link.label}</strong>
+                      <small>{link.note}</small>
+                    </span>
+                    <span aria-hidden="true">↗</span>
+                  </Link>
+                </FadeInSection>
+              ))}
+            </div>
+          </section>
+        </FadeInSection>
       </main>
       <footer className={styles.footer}>
         <span>Recovery Altitude</span>

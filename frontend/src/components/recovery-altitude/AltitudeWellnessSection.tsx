@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { FadeInSection } from "./FadeInSection";
 import { altitudeTopics } from "./altitude-wellness";
 import styles from "./Programs.module.css";
 
@@ -61,12 +62,12 @@ export function AltitudeWellnessSection() {
 
       <div className={styles.programList}>
         {altitudeTopics.map((topic, index) => (
-          <details
-            className={`${styles.program} ${focusId === topic.id ? styles.programRecommended : ""}`}
-            id={topic.id}
-            key={topic.id}
-            name="altitude-topic"
-          >
+          <FadeInSection key={topic.id} delay={index * 0.06}>
+            <details
+              className={`${styles.program} ${focusId === topic.id ? styles.programRecommended : ""}`}
+              id={topic.id}
+              name="altitude-topic"
+            >
             <summary className={styles.programSummary}>
               <span aria-hidden="true" className={styles.programNumber}>
                 {String(index + 1).padStart(2, "0")}
@@ -102,7 +103,8 @@ export function AltitudeWellnessSection() {
                 </p>
               </div>
             </div>
-          </details>
+            </details>
+          </FadeInSection>
         ))}
       </div>
 
