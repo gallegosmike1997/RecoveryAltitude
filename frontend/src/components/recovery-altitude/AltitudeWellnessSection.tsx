@@ -1,0 +1,65 @@
+import { altitudeTopics } from "./altitude-wellness";
+import styles from "./Programs.module.css";
+
+export function AltitudeWellnessSection() {
+  return (
+    <section aria-labelledby="altitude-title" className={styles.section} id="altitude-wellness">
+      <div className={styles.sectionHeader}>
+        <div>
+          <p className={styles.eyebrow}>Altitude wellness / field notes</p>
+          <h2 id="altitude-title">Elevation is a skill, not a barrier.</h2>
+        </div>
+        <p className={styles.sectionIntro}>
+          Altitude wellness is the everyday craft that makes elevation work for
+          you: how you pace, hydrate, stay warm, and breathe. These are the four
+          field notes we build into every program.
+        </p>
+      </div>
+
+      <div className={styles.programList}>
+        {altitudeTopics.map((topic, index) => (
+          <details className={styles.program} key={topic.id} name="altitude-topic">
+            <summary className={styles.programSummary}>
+              <span aria-hidden="true" className={styles.programNumber}>
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className={styles.programHeading}>
+                <strong>{topic.name}</strong>
+                <span>{topic.tagline}</span>
+              </span>
+              <span className={styles.programMeta}>
+                <span>{topic.meta.focus}</span>
+                <span>{topic.meta.effort}</span>
+                <span>{topic.meta.where}</span>
+              </span>
+              <span aria-hidden="true" className={styles.programMarker} />
+            </summary>
+            <div className={styles.programBody}>
+              <p className={styles.programDescription}>{topic.description}</p>
+              <div className={styles.programDetails}>
+                <div>
+                  <h3>Field practices</h3>
+                  <ul>
+                    {topic.practices.map((practice) => (
+                      <li key={practice}>{practice}</li>
+                    ))}
+                  </ul>
+                </div>
+                <p className={styles.programFit}>
+                  <span className={styles.fitLabel}>Watch for</span>
+                  {topic.watchFor}
+                </p>
+              </div>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <p className={styles.sectionFooter}>
+        Want this built into a plan of your own?{" "}
+        <a href="#consultation">Book a consultation</a> and we will match the
+        field notes to your next objective.
+      </p>
+    </section>
+  );
+}

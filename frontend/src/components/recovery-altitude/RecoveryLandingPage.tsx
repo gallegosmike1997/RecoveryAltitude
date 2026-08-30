@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { RecoveryHeader } from "./RecoveryHeader";
+import { AltitudeWellnessSection } from "./AltitudeWellnessSection";
 import { ProgramsSection } from "./ProgramsSection";
 import { descriptor } from "./data";
 import styles from "./Landing.module.css";
@@ -13,11 +14,6 @@ interface RecoveryLandingPageProps {
 }
 
 const routeSections = [
-  {
-    id: "altitude-wellness",
-    label: "Altitude wellness",
-    summary: "Acclimation, capacity, and the conditions that help you keep going.",
-  },
   {
     id: "recovery-support",
     label: "Recovery support",
@@ -89,6 +85,8 @@ export function RecoveryLandingPage({ variant, title, description }: RecoveryLan
         </section>
 
         <ProgramsSection />
+
+        <AltitudeWellnessSection />
 
         <section className={styles.routeSection} aria-labelledby="routes-title">
           <div className={styles.routeSectionHeader}>

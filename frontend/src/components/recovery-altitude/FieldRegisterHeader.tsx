@@ -30,7 +30,7 @@ export function FieldRegisterHeader({ activeKey, menu }: VariantHeaderProps) {
         </div>
       </div>
       <div className={styles.fieldRouteBand}>
-        <PrimaryNav activeKey={activeKey} variant="field-register" />
+        <PrimaryNav activeKey={activeKey} splitIndex={3} variant="field-register" />
       </div>
       <MobileNavPanel activeKey={activeKey} menu={menu} variant="field-register" />
     </header>

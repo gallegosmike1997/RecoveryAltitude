@@ -240,6 +240,10 @@
   letter-spacing: 0;
 }
 
+.navGap {
+  display: none;
+}
+
 .navLink--active .navNumber {
   color: var(--ra-navy);
   background: var(--ra-gold);
@@ -503,6 +507,17 @@
   color: var(--ra-ivory);
 }
 
+.fieldRouteBand .primaryNav--field-register .navList {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.fieldRouteBand .navGap {
+  display: block;
+  flex: 1 1 auto;
+  max-width: 320px;
+}
+
 .primaryNav--field-register .navList {
   gap: clamp(18px, 2vw, 32px);
 }
@@ -521,6 +536,25 @@
 
 .primaryNav--field-register .navNumber {
   margin-right: 8px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .fieldRouteBand .navGap {
+    display: none;
+  }
+
+  .primaryNav--field-register .navList {
+    gap: 14px;
+  }
+
+  .primaryNav--field-register .navLink {
+    font-size: 14px;
+  }
+
+  .primaryNav--field-register .navNumber {
+    min-width: 24px;
+    margin-right: 6px;
+  }
 }
 
 /* Mobile */
