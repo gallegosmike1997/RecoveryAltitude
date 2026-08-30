@@ -558,7 +558,12 @@
 }
 
 /* Mobile */
-@media (max-width: 767px) {
+/*
+ * The full navigation no longer has enough room once the masthead and action
+ * are accounted for. Use the menu treatment through tablet widths instead of
+ * allowing the desktop links to overlap.
+ */
+@media (max-width: 1199px) {
   .brandLockup {
     width: 160px;
     height: 64px;
@@ -825,7 +830,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
   .mobilePanel {
     display: none !important;
   }
