@@ -72,9 +72,9 @@ export function RecoveryLandingPage({ variant, title, description }: RecoveryLan
                 Explore the routes <span aria-hidden="true">↘</span>
               </a>
               <span className={styles.actionDivider} aria-hidden="true" />
-              <a className={styles.textAction} href="#approach">
+              <Link className={styles.textAction} href="/approach">
                 Read our approach <span aria-hidden="true">↘</span>
-              </a>
+              </Link>
             </div>
           </div>
           <aside className={styles.routeMarker} aria-label="Recovery Altitude descriptor">
@@ -99,9 +99,9 @@ export function RecoveryLandingPage({ variant, title, description }: RecoveryLan
                 <span className={styles.routeNumber}>{String(index + 1).padStart(2, "0")}</span>
                 <h3>{section.label}</h3>
                 <p>{section.summary}</p>
-                <a aria-label={`Read more about ${section.label}`} href="#consultation">
+                <Link aria-label={`Read more about ${section.label}`} href={`/${section.id}`}>
                   <span aria-hidden="true">↗</span>
-                </a>
+                </Link>
               </article>
             ))}
           </div>

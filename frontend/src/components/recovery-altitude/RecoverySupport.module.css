@@ -1,0 +1,250 @@
+.section {
+  width: min(100% - 48px, 1180px);
+  margin: 0 auto;
+  padding: 54px 0 86px;
+  border-top: 1px solid var(--ra-line);
+}
+
+.heading {
+  display: grid;
+  align-items: end;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  margin-bottom: 42px;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--ra-teal);
+  font-family: var(--ra-font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  max-width: 610px;
+  margin: 0;
+  color: var(--ra-navy);
+  font-family: var(--ra-font-display);
+  font-size: clamp(38px, 4.7vw, 64px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 0.92;
+}
+
+.heading > p {
+  max-width: 420px;
+  margin: 0 0 4px;
+  justify-self: end;
+  color: var(--ra-ink-muted);
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.steps {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 2px solid var(--ra-navy);
+  list-style: none;
+}
+
+.steps li {
+  min-height: 244px;
+  padding: 26px 28px 28px 0;
+  border-bottom: 1px solid var(--ra-line);
+}
+
+.steps li + li {
+  padding-left: 28px;
+  border-left: 1px solid var(--ra-line);
+}
+
+.steps span {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--ra-teal);
+  font-family: var(--ra-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.steps h3,
+.compass h3 {
+  margin: 0;
+  color: var(--ra-navy);
+  font-family: var(--ra-font-display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 0.98;
+}
+
+.steps p {
+  max-width: 285px;
+  margin: 14px 0 0;
+  color: var(--ra-ink-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.compass {
+  display: grid;
+  margin-top: 46px;
+  padding: 30px;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+  gap: 24px 40px;
+  background: var(--ra-navy);
+  color: var(--ra-ivory);
+}
+
+.compass .eyebrow,
+.compass h3 {
+  color: var(--ra-ivory);
+}
+
+.compassIntro {
+  max-width: 260px;
+  margin: 16px 0 0;
+  color: rgba(251, 250, 242, 0.72);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.choices {
+  display: grid;
+  gap: 8px;
+}
+
+.choices button {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  border: 1px solid rgba(251, 250, 242, 0.32);
+  border-radius: 0;
+  background: transparent;
+  color: var(--ra-ivory);
+  cursor: pointer;
+  font-family: var(--ra-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.choices button:hover,
+.choices button[aria-pressed="true"] {
+  border-color: var(--ra-gold);
+  background: var(--ra-gold);
+  color: var(--ra-navy);
+}
+
+.choices button:hover {
+  transform: translateX(3px);
+}
+
+.choices button:focus-visible {
+  outline: 2px solid var(--ra-gold);
+  outline-offset: 3px;
+}
+
+.recommendation {
+  grid-column: 2;
+  min-height: 48px;
+  padding-top: 2px;
+  border-top: 1px solid rgba(251, 250, 242, 0.28);
+}
+
+.recommendation p {
+  margin: 12px 0 0;
+  color: rgba(251, 250, 242, 0.78);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.recommendation a {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--ra-gold);
+  font-family: var(--ra-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.recommendation a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.closing {
+  margin: 28px 0 0;
+  color: var(--ra-ink-muted);
+  font-size: 15px;
+}
+
+.closing a {
+  color: var(--ra-navy);
+  font-weight: 700;
+  text-decoration-color: var(--ra-gold);
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 780px) {
+  .section {
+    width: min(100% - 40px, 640px);
+    padding: 44px 0 66px;
+  }
+
+  .heading {
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  .heading h2 {
+    margin-bottom: 24px;
+  }
+
+  .heading > p {
+    max-width: none;
+  }
+
+  .steps {
+    display: block;
+  }
+
+  .steps li,
+  .steps li + li {
+    min-height: 0;
+    padding: 22px 0;
+    border-left: 0;
+  }
+
+  .steps span {
+    margin-bottom: 22px;
+  }
+
+  .compass {
+    display: block;
+    margin-top: 32px;
+    padding: 24px 20px;
+  }
+
+  .compass h3 {
+    max-width: 330px;
+  }
+
+  .choices {
+    margin-top: 24px;
+  }
+
+  .recommendation {
+    margin-top: 24px;
+  }
+}

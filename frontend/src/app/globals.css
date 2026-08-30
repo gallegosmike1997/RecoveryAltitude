@@ -53,6 +53,27 @@ a {
   color: inherit;
 }
 
+.section-page-content {
+  width: min(100% - 48px, 1180px);
+  margin: 0 auto;
+  padding: 0 0 86px;
+  color: var(--ra-ink-muted);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.section-page-content p {
+  max-width: 680px;
+  margin: 0;
+}
+
+@media (max-width: 780px) {
+  .section-page-content {
+    width: min(100% - 40px, 640px);
+    padding-bottom: 66px;
+  }
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;

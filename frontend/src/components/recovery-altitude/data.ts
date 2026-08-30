@@ -5,26 +5,26 @@ export const descriptor = "Outdoor recovery & altitude wellness";
 export const consultationLabel = "Book a consultation";
 
 export const navItems: NavItem[] = [
-  { key: "programs", label: "Programs", href: "#programs", group: "service" },
+  { key: "programs", label: "Programs", href: "/programs", group: "service" },
   {
     key: "altitude",
     label: "Altitude wellness",
-    href: "#altitude-wellness",
+    href: "/altitude-wellness",
     group: "service",
   },
   {
     key: "recovery",
     label: "Recovery support",
-    href: "#recovery-support",
+    href: "/recovery-support",
     group: "service",
   },
-  { key: "approach", label: "Our approach", href: "#approach", group: "context" },
-  { key: "resources", label: "Resources", href: "#resources", group: "context" },
-  { key: "about", label: "About", href: "#about", group: "context" },
+  { key: "approach", label: "Our approach", href: "/approach", group: "context" },
+  { key: "resources", label: "Resources", href: "/resources", group: "context" },
+  { key: "about", label: "About", href: "/about", group: "context" },
 ];
 
 const variantOrder: Record<HeaderVariant, Array<NavItem["key"]>> = {
-  "trailhead": ["programs", "altitude", "recovery", "resources", "about"],
+  "trailhead": ["programs", "altitude", "recovery", "approach", "resources", "about"],
   "summit-gate": ["approach", "programs", "altitude", "recovery", "resources"],
   "field-register": [
     "programs",
